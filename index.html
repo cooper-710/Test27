@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLB Pitch Replay</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+    }
+    canvas { display: block; }
+    #overlay {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label, select, button {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+  <div id="overlay">
+    <label for="teamSelect">Select Team</label>
+    <select id="teamSelect"></select>
+    <label for="batterSelect">Select Batter</label>
+    <select id="batterSelect"></select>
+    <label for="dateSelect">Select Game Date</label>
+    <select id="dateSelect"></select>
+    <label for="pitcherSelect">Select Pitcher</label>
+    <select id="pitcherSelect"></select>
+    <label for="pitchSelect">Select Pitch</label>
+    <select id="pitchSelect"></select>
+    <label for="cameraSelect">Select Camera Angle</label>
+    <select id="cameraSelect">
+      <option value="catcher">Home-Plate (Catcher) View</option>
+      <option value="pitcher">Pitcher View</option>
+      <option value="rhh">Right-Hand Hitter (RHH) View</option>
+      <option value="lhh">Left-Hand Hitter (LHH) View</option>
+      <option value="1b">First-Base Line View</option>
+      <option value="3b">Third-Base Line View</option>
+      <option value="side">Side (Low Third-Base) View</option>
+      <option value="top">Top-Down View</option>
+    </select>
+    <label><input type="checkbox" id="trailToggle" /> Show Trail</label>
+    <button id="replayBtn">REPLAY</button>
+    <button id="pauseBtn">PAUSE</button>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
